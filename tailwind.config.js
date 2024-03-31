@@ -1,0 +1,26 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+ content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+     "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    colors: {
+      primaryOrange: "#E36414",
+      primaryGray: "#333",
+      accentError: "#B31312",
+      white: "#ffff"
+    },
+    extend: {
+      fontFamily: {
+        // sans: ["var(--font-sans)", ...fontFamily.sans],
+      },
+    },
+  },
+  plugins: [],
+}
+
