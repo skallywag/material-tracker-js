@@ -56,7 +56,7 @@ export default function App() {
             ))}
           </Group>
         </AppShell.Navbar>
-        <AppShell.Main>
+        <AppShell.Main className="bg-lightGray">
           {/* <Component {...pageProps} /> */}
           <TrackerPage/>
         </AppShell.Main>

@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@font-face {
+    font-family: "rob" ;
+    src: local("Roboto-Regular"), url("./fonts/Roboto-Regular.ttf") format(".ttf")
+}

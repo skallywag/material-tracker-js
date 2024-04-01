@@ -12,12 +12,14 @@ export default {
     colors: {
       primaryOrange: "#E36414",
       primaryGray: "#333",
+      lightGray: "#d3d3d3",
       accentError: "#B31312",
       white: "#ffff"
     },
     extend: {
       fontFamily: {
-        // sans: ["var(--font-sans)", ...fontFamily.sans],
+        // 'custom': ['workbench', 'sans-serif'],
+        workbench: ["workbench"]
       },
     },
   },
