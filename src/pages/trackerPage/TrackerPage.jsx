@@ -15,6 +15,7 @@ import {useForm} from '@mantine/form'
   import { useDisclosure } from '@mantine/hooks';  
 import RollCard from '../../components/rollCard/RollCard';
 import { v4 as uuidv4 } from 'uuid';
+import MetersToFeetConverter from '../../components/metersToFeet/MetersToFeet';
 
 const TrackerPage = () => {
 const [rolls, setRolls] = useState([]);
@@ -175,7 +176,7 @@ console.log(remainingLength);
         {length ?    <Box className='rounded p-6' bg={"orange"}>
           <Text>Return Roll Length: {length}</Text>
         </Box> : null }
-     
+        <MetersToFeetConverter/>
       </Box>
       </Box>
     </Box>
