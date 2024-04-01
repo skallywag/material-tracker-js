@@ -9,8 +9,8 @@ function MetersToFeetConverter() {
  const handleInputChange = (e) => {
     const inputValue = parseFloat(e.target.value);
     setMeters(inputValue);
-    const feetValue = inputValue * 3.28084; // 1 meter = 3.28084 feet
-    setFeet(parseInt(feetValue)); // Convert to integer
+    const feetValue = inputValue * 3.28084;
+    setFeet(parseInt(feetValue));
   };
 
   return (
