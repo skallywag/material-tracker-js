@@ -30,11 +30,9 @@ const [opened, { open, close }] = useDisclosure(false);
  const form = useForm({
     initialValues: {
       jobLength: "",
-      jobNumber: ""
     },
     validate: {
       jobLength: (value) => value.length <= 0 && "Enter job length",
-      jobNumber: (value) => value.length <= 0 && "Enter job number",
     },
   });
 
@@ -123,7 +121,7 @@ function addTotalLength() {
   const totalSum = rolls.reduce((sum, obj) => {
     return sum + Number(obj.rollLength.replace(',', '')) - Number(obj.rejectLength);
   }, 0);
-const remainingLength = totalSum - Number(form.values.jobLength)
+  const remainingLength = totalSum - Number(form.values.jobLength)
 
   localStorage.setItem("jobData", JSON.stringify(remainingLength))
   setLength(remainingLength.toString())
