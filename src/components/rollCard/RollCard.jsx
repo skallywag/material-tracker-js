@@ -6,7 +6,8 @@ import {
   Button,
   Text,
   Pill,
-  Flex
+  Flex,
+  Divider
 } from "@mantine/core";
 import {useForm} from '@mantine/form'
 import { useState } from "react";
@@ -34,7 +35,7 @@ const RollCard = (props) => {
   });
 
   return (
-    <Box className="bg-primaryOrange max-w-72 rounded-md p-8">
+    <Box className="bg-primaryBlue max-w-72 rounded-md p-8 shadow-customShadow">
         <RejectRollModal rollData={props.rollData} form={form} title={"Confirm Reject"} onReject={props.onReject} close={() => setOpenRejectModal(!openRejectModal)} opened={openRejectModal}/>
          <DeleteRollModal title={"Confirm Deletion"} onDelete={props.onDelete} opened={opened} open={open} close={close}/>
          <CompleteRollModal title={"Confirm Complete"} rollData={props.rollData} opened={openCompleteModal} close={() => setOpenCompleteModal(!openCompleteModal)} onUpdate={() => {
@@ -48,21 +49,27 @@ const RollCard = (props) => {
                 setOpenCompleteModal(!openCompleteModal)
               }
                 }/>
-
-      <Flex mb={14} style={{borderBottom: "2px solid black"}} justify={"space-between"}>
-        <Text size="24px">Roll {props.rollData.rollNumber}</Text>
-          <IconX
+     <Flex mb={14} justify={"space-between"}>
+      <Pill size={"lg"} bg={props.rollData.status === "Saved" || props.rollData.status === "Complete" ? "green" : "red"}>{props.rollData.status}</Pill>
+           <IconX
+           size={24}
         className="cursor-pointer hover:text-accentError"
         onClick={
           () => open()
         }
       />
       </Flex>
-  
-      <Flex mb={8} justify={"space-between"}>
+      
+      <Flex mb={10} justify={"space-between"}>
+        <Text size="24px">Roll: {props.rollData.rollNumber}</Text>
+
+     
+      </Flex>
+    <Divider mb={10} color="red"/>
+      {/* <Flex mb={8} justify={"space-between"}>
       <Pill size={"lg"} bg={props.rollData.status === "Saved" || props.rollData.status === "Complete" ? "green" : "red"}>{props.rollData.status}</Pill>
       </Flex>
-      
+       */}
 
       <Box>
         <form  onSubmit={form.onSubmit(() => {

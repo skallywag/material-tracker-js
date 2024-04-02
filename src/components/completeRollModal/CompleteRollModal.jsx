@@ -9,7 +9,7 @@ import {
 
 const CompleteRollModal = (props) => {
   return (
-    <Modal centered opened={props.opened} onClose={props.close} title={props.title} className="shadow-2xl text-opacity-75">
+    <Modal centered opened={props.opened} onClose={props.close} title={props.title}>
         <Text>Are you sure you want to complete this roll?</Text>
         <Text mb={15}>Ensure roll information is correct</Text>
             <Flex justify={"space-around"}>

@@ -14,12 +14,12 @@ function MetersToFeetConverter() {
   };
 
   return (
-    <Box>
-      <h2>Meters to Feet Converter</h2>
-      <label>
+    <Box className="bg-primaryBlue p-7 rounded">
+      <Text mb={10} size='20px' style={{fontWeight: "bolder"}}>Meters to Feet Converter</Text>
+      <Text mb={8}>
         Meters:
         <Input type="number" value={meters} onChange={handleInputChange} />
-      </label>
+      </Text>
         <Text>Feet: {feet !== '' ? feet : ''}</Text>    
  </Box>
   );
