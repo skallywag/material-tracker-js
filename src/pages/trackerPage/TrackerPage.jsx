@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import "@mantine/dates/styles.css";
+import {IconCircleChevronsUp} from '@tabler/icons-react'
 import {
   Box,
   Button,
@@ -11,9 +12,9 @@ import {
   Divider
 } from "@mantine/core";
 import {useForm} from '@mantine/form'
-  import { toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
-  import { useDisclosure } from '@mantine/hooks';  
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useDisclosure } from '@mantine/hooks';  
 import RollCard from '../../components/rollCard/RollCard';
 import { v4 as uuidv4 } from 'uuid';
 import MetersToFeetConverter from '../../components/metersToFeet/MetersToFeet';
@@ -27,7 +28,7 @@ const [storedJob, setStoredJob] = useState('')
 const [opened, { open, close }] = useDisclosure(false);
 
 
- const form = useForm({
+const form = useForm({
     initialValues: {
       jobLength: "",
     },
@@ -41,12 +42,18 @@ useEffect(() => {
     const storedRolls = JSON.parse(localStorage.getItem('rolls') || '[]');
     const storedLength = localStorage.getItem('jobData') || '';
     const storedJobNumber = localStorage.getItem('jobNumber') || '';
-    console.log(storedJobNumber);
     setStoredJob(storedJobNumber)
     setRolls(storedRolls);
     setLength(storedLength)
   }
 }, []);
+
+  function scrollToTop(){
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
 
 const handleAddRoll = ()=> {
     setRolls((prevRolls) => { 
@@ -63,6 +70,8 @@ const handleAddRoll = ()=> {
 
       const updatedRolls = [...prevRolls, newRoll];
       localStorage.setItem('rolls', JSON.stringify(updatedRolls));
+      toast("Roll Created!")
+   
       return updatedRolls;
     });
   };
@@ -155,15 +164,17 @@ function addTotalLength() {
           rollData={item}
           onDelete={() => {
               const upDatedRolls = rolls.filter(
-							(roll) => roll.id !== item.id
-						);
-            localStorage.setItem("rolls", JSON.stringify(upDatedRolls));
-						setRolls(upDatedRolls);
-            toast("Roll Deleted!")
-					}}
-					/>
-        )) : null}
+                (roll) => roll.id !== item.id
+                );
+                localStorage.setItem("rolls", JSON.stringify(upDatedRolls));
+                setRolls(upDatedRolls);
+                toast("Roll Deleted!")
+              }}
+              />
+              )) : null}
       </Flex>
+              {rolls.length >= 4 && 
+              <Box> <Text>Top</Text> <IconCircleChevronsUp className="color-primaryBlue" size={"50px"} cursor={"pointer"} mb={20} bg={"green"} onClick={scrollToTop}>Scroll to Top</IconCircleChevronsUp> </Box>}
       </Box>
       <Box mr={"100px"}>
 
