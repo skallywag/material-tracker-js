@@ -44,7 +44,7 @@ const PiecesToFeet = (props) => {
         <Button mb={10} type="submit" bg={"red"}>Calculate</Button>
         </form>
         <Text>10% included</Text>
-        <Text>Feet: {piecesToFt} </Text>
+        <Text>Meters: {piecesToFt} </Text>
     </Box>
   );
 };
