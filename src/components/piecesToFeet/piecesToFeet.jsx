@@ -34,7 +34,7 @@ const PiecesToFeet = (props) => {
 
   return (
     <Box className="bg-primaryBlue p-7 rounded">
-        <Text size="20px" style={{fontWeight: "bolder"}} mb={15}>Pieces To Feet Calculator</Text>
+        <Text size="20px" style={{fontWeight: "bolder"}} mb={15}>Pieces To Meters Calculator</Text>
         <form onSubmit={form.onSubmit(() => {
             calculatePiecesToFeet(form.values)
         })}>

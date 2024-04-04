@@ -176,6 +176,7 @@ function addTotalLength() {
               {rolls.length >= 4 && 
               <Box> <Text>Top</Text> <IconCircleChevronsUp className="color-primaryBlue" size={"50px"} cursor={"pointer"} mb={20} bg={"green"} onClick={scrollToTop}>Scroll to Top</IconCircleChevronsUp> </Box>}
       </Box>
+           
       <Box mr={"100px"}>
 
         <Title>CO-{storedJob}</Title> 

@@ -66,11 +66,6 @@ const RollCard = (props) => {
      
       </Flex>
     <Divider mb={10} color="red"/>
-      {/* <Flex mb={8} justify={"space-between"}>
-      <Pill size={"lg"} bg={props.rollData.status === "Saved" || props.rollData.status === "Complete" ? "green" : "red"}>{props.rollData.status}</Pill>
-      </Flex>
-       */}
-
       <Box>
         <form  onSubmit={form.onSubmit(() => {
               props.onUpdate({ 
